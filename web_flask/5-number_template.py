@@ -30,16 +30,16 @@ def python_route(text="is cool"):
     return "Python " + text.replace('_', ' ')
 
 
-@app.route("/number/<n>", strict_slashes=False)
+@app.route("/number/<int:n>", strict_slashes=False)
 def number_route(n):
     """function returns value of n if n is integer"""
-    return "{} is a number".format(int(n))
+    return "{} is a number".format(n)
 
 
-@app.route("/number_template/<n>", strict_slashes=False)
+@app.route("/number_template/<int:n>", strict_slashes=False)
 def number_template(n):
     """function display html page if n is integer"""
-    return render_template("5-number.html", num=int(n))
+    return render_template("5-number.html", num=n)
 
 
 if __name__ == "__main__":
