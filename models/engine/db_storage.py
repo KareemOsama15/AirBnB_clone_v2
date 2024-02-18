@@ -76,3 +76,7 @@ class DBStorage():
         from models.review import Review
         Base.metadata.create_all(self.__engine)
         Base.metadata.create_all(self.__engine)
+
+    def close(self):
+        """"""
+        self.__session.remove()
