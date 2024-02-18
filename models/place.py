@@ -35,7 +35,7 @@ class Place(BaseModel, Base):
     amenities = relationship("Amenity", secondary=place_amenity,
                              viewonly=False)
 
-    if os.environ['HBNB_ENV'] != 'db':
+    if os.environ['HBNB_TYPE_STORAGE'] != 'db':
         @property
         def reviews(self):
             """Getter method to retrieve related Review instances."""
